@@ -30,7 +30,7 @@ function retrieveData(){
 				prefix += ": ";
 				var product = prefix + "\"" + el.text() + "\"";
 				if (product.length > 140){
-					product = product.substring(0, 137);
+					product = product.substring(0, 135);
 					product += "...\"";
 				}
 				console.log(product);
