@@ -7,8 +7,11 @@ var T = new Twit(config);
 
 var lastSender;
 
+//var users = {}
+
 retrieveData();
 setInterval(retrieveData, 1000*30);
+//setInterval(retrieveDM,1000*10);
 
 
 function retrieveData(){
@@ -70,3 +73,25 @@ function sleep(milliseconds) {
     }
   }
 }
+
+
+/*
+var params = {
+	count:5
+}
+
+function retrieveDM(){
+	T.get('direct_messages', params, gotData);
+}
+
+function gotData(err, data, response){
+	console.log(data);
+	console.log("\n\n---\n\n" + response);
+	console.log(err);
+	if (data.text.toLowerCase().startsWith("link ")) {
+		var user = data.text.slice(5);
+		users[user] = data.sender_id;
+		console.log(users);
+	}
+	console.log("Got here!")
+} */
